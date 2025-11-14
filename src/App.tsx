@@ -19,13 +19,13 @@ function App() {
 			</ParallaxLayer>
 			
 
-			<ParallaxLayer layer={0.5} tilt={15}>
+			<ParallaxLayer layer={0.5} tilt={10}>
 				<EffectLayer
 					layer1="/media/img/layers/layer-1.png"
 					layer2="/media/img/layers/layer-2.png"
 					layer3="/media/img/layers/layer-3.png"
 					scale={115}
-					opacity={0.5}
+					opacity={1}
 				/>
 			</ParallaxLayer>
 
