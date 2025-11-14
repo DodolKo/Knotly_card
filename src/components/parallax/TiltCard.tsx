@@ -12,7 +12,7 @@ const DEFAULT_MAX_TILT = 8; // degrees
 export function TiltCard({ children, maxTilt = DEFAULT_MAX_TILT, intensity = 1 }: TiltCardProps) {
 	const cardRef = useRef<HTMLDivElement>(null);
 	const { mousePosition, deviceOrientation, isMobile } = useParallax();
-	const animationFrameRef = useRef<number>();
+	const animationFrameRef = useRef<number | undefined>(undefined);
 
 	useEffect(() => {
 		let isActive = true;

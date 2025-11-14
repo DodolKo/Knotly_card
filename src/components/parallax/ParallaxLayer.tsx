@@ -13,7 +13,7 @@ const PARALLAX_INTENSITY = 30; // pixels of movement per layer
 export function ParallaxLayer({ layer, children, intensity = PARALLAX_INTENSITY, tilt }: ParallaxLayerProps) {
 	const layerRef = useRef<HTMLDivElement>(null);
 	const { mousePosition, deviceOrientation, isMobile } = useParallax();
-	const animationFrameRef = useRef<number>();
+	const animationFrameRef = useRef<number | undefined>(undefined);
 
 	useEffect(() => {
 		let isActive = true;
