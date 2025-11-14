@@ -4,7 +4,11 @@ import { mapUserToHeaderView, type UserHeaderView, type UserProfile } from "../.
 import { ProfilePicture } from "../ui/ProfilePicture";
 import { DarkModeToggle } from "../ui/DarkModeToggle";
 
-export function AppHeader() {
+export interface AppHeaderProps {
+	textBorder?: boolean;
+}
+
+export function AppHeader({ textBorder = false }: AppHeaderProps = {}) {
 	const [headerView, setHeaderView] = useState<UserHeaderView | null>(null);
 
 	useEffect(() => {
@@ -37,8 +41,8 @@ export function AppHeader() {
 						borderWidth={4}
 					/>
 				)}
-				<h1 className="profile-name text-h1 text-color-primary">{headerView.displayName}</h1>
-				{headerView.bio && <p className="profile-bio">{headerView.bio}</p>}
+				<h1 className={`profile-name text-h1 text-color-primary ${textBorder ? 'profile-name-bordered' : ''}`}>{headerView.displayName}</h1>
+				{headerView.bio && <p className={`profile-bio ${textBorder ? 'profile-bio-bordered' : ''}`}>{headerView.bio}</p>}
 			</div>
 		</header>
 	);

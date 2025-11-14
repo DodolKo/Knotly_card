@@ -5,25 +5,25 @@
 /* Prevent horizontal overflow from parallax effects */
 html {
 	overflow-x: hidden;
-	overflow-y: visible;
+	overflow-y: hidden;
 	width: 100%;
 	height: 100%;
 }
 
 body {
 	overflow-x: hidden;
-	overflow-y: auto;
+	overflow-y: hidden;
 	width: 100%;
-	min-height: 100%;
+	height: 100%;
 	margin: 0;
 	padding: 0;
 }
 
 #root {
 	width: 100%;
-	min-height: 100%;
+	height: 100%;
 	overflow-x: hidden;
-	overflow-y: visible;
+	overflow-y: hidden;
 }
 
 /* Hide native scrollbars but keep scrolling enabled (cross-browser) */
@@ -37,6 +37,21 @@ html, body, #root {
 html::-webkit-scrollbar,
 body::-webkit-scrollbar,
 #root::-webkit-scrollbar {
+	/* Chrome, Safari, Opera */
+	display: none;
+	width: 0;
+	height: 0;
+}
+
+/* Scrollable container for content that needs scroll */
+.scrollable-content {
+	/* Firefox */
+	scrollbar-width: none;
+	/* IE 10+ */
+	-ms-overflow-style: none;
+}
+
+.scrollable-content::-webkit-scrollbar {
 	/* Chrome, Safari, Opera */
 	display: none;
 	width: 0;
@@ -313,12 +328,18 @@ body::-webkit-scrollbar,
 	.qr-modal-overlay {
 		position: fixed;
 		inset: 0;
-		background: var(--k-overlay-background);
+		background: rgba(54, 116, 142, 0.3);
+		backdrop-filter: blur(8px);
+		-webkit-backdrop-filter: blur(8px);
 		display: flex;
 		align-items: center;
 		justify-content: center;
 		z-index: 9999;
 		pointer-events: auto;
+	}
+
+	.dark .qr-modal-overlay {
+		background: rgba(54, 116, 142, 0.4);
 	}
 
 	.qr-modal-content {
@@ -483,10 +504,30 @@ body::-webkit-scrollbar,
 		font-family: var(--font-family-display);
 	}
 
+	.profile-name-bordered {
+		-webkit-text-stroke: 2px var(--k-color-primary);
+		text-stroke: 2px var(--k-color-primary);
+	}
+
+	.dark .profile-name-bordered {
+		-webkit-text-stroke: 2px var(--k-color-accent);
+		text-stroke: 2px var(--k-color-accent);
+	}
+
 	.profile-bio {
 		@apply text-xs font-normal uppercase tracking-wider text-center;
 		color: var(--k-color-secondary);
 		font-family: var(--font-family-display);
+	}
+
+	.profile-bio-bordered {
+		-webkit-text-stroke: 1px var(--k-color-primary);
+		text-stroke: 1px var(--k-color-primary);
+	}
+
+	.dark .profile-bio-bordered {
+		-webkit-text-stroke: 1px var(--k-color-accent);
+		text-stroke: 1px var(--k-color-accent);
 	}
 
 	.dark .profile-bio {

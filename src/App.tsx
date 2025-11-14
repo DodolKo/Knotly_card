@@ -5,6 +5,7 @@ import { AppFooter } from "./components/layout/AppFooter";
 import { LinkCard } from "./components/ui/LinkCard";
 import { Background } from "./components/ui/Background";
 import { ShapesScrollLayer } from "./components/ui/ShapesScrollLayer";
+import { SparkleField } from "./components/ui/SparkleField";
 import { ParallaxRender, ParallaxLayer, ParallaxGsapLayer, GyroscopePermissionButton } from "./components/parallax";
 
 function App() {
@@ -19,58 +20,60 @@ function App() {
 				/>
 			</ParallaxLayer>
 			
+			{/* Scrollable container for GSAP scroll-driven elements and layout */}
+			<div
+				className="scrollable-content"
+				style={{
+					position: "fixed",
+					inset: 0,
+					overflowY: "auto",
+					overflowX: "hidden",
+					width: "100%",
+					height: "100%",
+				}}
+			>
+				{/* GSAP scroll-driven SVG shapes layer */}
+				<ParallaxGsapLayer layer={0.8} tilt={8}>
+					<ShapesScrollLayer />
+				</ParallaxGsapLayer>
 
-			{/* <ParallaxLayer layer={0.5} tilt={10}>
-				<EffectLayer
-					layer1="/media/img/layers/layer-1.png"
-					layer2="/media/img/layers/layer-2.png"
-					layer3="/media/img/layers/layer-3.png"
-					scale={115}
-					opacity={1}
-				/>
-			</ParallaxLayer> */}
+				<LayoutRender>
+					<ParallaxLayer layer={1} tilt={15}>
+						<AppHeader />
+					</ParallaxLayer>
 
-			{/* GSAP scroll-driven SVG shapes layer */}
-			<ParallaxGsapLayer layer={0.8} tilt={8}>
-				<ShapesScrollLayer />
-			</ParallaxGsapLayer>
+					<ParallaxLayer layer={2} tilt={15}>
+						<AppContent>
+							<LinkCard name="gumroad" />
+							<LinkCard name="koFi" />
+							<LinkCard name="Home" />
+							<LinkCard mode="manual" name="Custom Link" url="https://example.com" />
+							<LinkCard 
+								mode="manual" 
+								name="Banner Thumbnail Link" 
+								url="https://example.com"
+								asThumbnail={true}
+								thumbnailFormat="banner"
+								thumbnailSrc="/media/img/thumbmail/thumbnail_16-9.png"
+							/>
+							<LinkCard 
+								mode="manual" 
+								name="Display Thumbnail Link" 
+								url="https://example.com"
+								asThumbnail={true}
+								thumbnailFormat="display"
+								thumbnailSrc="/media/img/thumbmail/thumbnail_4-3.png"
+							/>
+						</AppContent>
+					</ParallaxLayer>
 
-			<LayoutRender>
-				<ParallaxLayer layer={1} tilt={15}>
-					<AppHeader />
-				</ParallaxLayer>
+					<ParallaxLayer layer={3} tilt={15}>
+						<AppFooter />
+					</ParallaxLayer>
+				</LayoutRender>
+			</div>
 
-				<ParallaxLayer layer={2} tilt={15}>
-					<AppContent>
-						<LinkCard name="gumroad" />
-						<LinkCard name="koFi" />
-						<LinkCard name="Home" />
-						<LinkCard mode="manual" name="Custom Link" url="https://example.com" />
-						<LinkCard 
-							mode="manual" 
-							name="Banner Thumbnail Link" 
-							url="https://example.com"
-							asThumbnail={true}
-							thumbnailFormat="banner"
-							thumbnailSrc="/media/img/thumbmail/thumbnail_16-9.png"
-						/>
-						<LinkCard 
-							mode="manual" 
-							name="Display Thumbnail Link" 
-							url="https://example.com"
-							asThumbnail={true}
-							thumbnailFormat="display"
-							thumbnailSrc="/media/img/thumbmail/thumbnail_4-3.png"
-						/>
-					</AppContent>
-				</ParallaxLayer>
-
-				<ParallaxLayer layer={3} tilt={15}>
-					<AppFooter />
-				</ParallaxLayer>
-			</LayoutRender>
-
-			{/* <SparkleField /> */}
+			<SparkleField />
 			{/* <LightingShader /> */}
 
 			<GyroscopePermissionButton />

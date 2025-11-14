@@ -79,9 +79,52 @@ export function ParallaxGsapLayer({
 
 		gsap.registerPlugin(ScrollTrigger);
 
+		let resizeObserver: ResizeObserver | null = null;
+
 		const ctx = gsap.context(() => {
 			const element = animatedRef.current;
 			if (!element) return;
+
+			// Find the scrollable container - try multiple methods for reliability
+			let scrollableContainer: HTMLElement | null = null;
+			
+			// Method 1: Traverse up from the element
+			let parent = element.parentElement;
+			while (parent && parent !== document.body) {
+				if (parent.classList && parent.classList.contains('scrollable-content')) {
+					scrollableContainer = parent;
+					break;
+				}
+				parent = parent.parentElement;
+			}
+			
+			// Method 2: If not found, try querySelector (fallback)
+			if (!scrollableContainer) {
+				scrollableContainer = document.querySelector('.scrollable-content') as HTMLElement;
+			}
+
+			// For scrollable effect layers (layer > 0 && layer < 1), ensure the trigger element has enough height
+			// to allow ScrollTrigger to track scroll progress (even though the layer itself is fixed)
+			const isScrollableEffectLayer = layer > 0 && layer < 1;
+			if (scrollableContainer && isScrollableEffectLayer) {
+				const updateHeight = () => {
+					if (element && scrollableContainer) {
+						// Make trigger element match the scrollable container's scroll height
+						// This allows ScrollTrigger to track scroll progress even with fixed positioning
+						const scrollHeight = scrollableContainer.scrollHeight;
+						element.style.height = `${scrollHeight}px`;
+					}
+				};
+				
+				// Set initial height
+				updateHeight();
+				
+				// Update on resize
+				resizeObserver = new ResizeObserver(updateHeight);
+				if (scrollableContainer) {
+					resizeObserver.observe(scrollableContainer);
+				}
+			}
 
 			// Make movement distances responsive to viewport height
 			const viewportHeight = typeof window !== "undefined" ? window.innerHeight : 800;
@@ -92,14 +135,21 @@ export function ParallaxGsapLayer({
 			const asterisk2 = element.querySelector('[data-shape="asterisk-2"]');
 			const asterisk3 = element.querySelector('[data-shape="asterisk-3"]');
 
+			const scrollTriggerConfig: any = {
+				trigger: element,
+				start: "top bottom", // when element enters the viewport
+				// Stretch animation across a longer scroll distance
+				end: "+=250%",
+				scrub: 0.8,
+			};
+
+			// Only set scroller if we found a scrollable container
+			if (scrollableContainer) {
+				scrollTriggerConfig.scroller = scrollableContainer;
+			}
+
 			const tl = gsap.timeline({
-				scrollTrigger: {
-					trigger: element,
-					start: "top bottom", // when element enters the viewport
-					// Stretch animation across a longer scroll distance
-					end: "+=250%",
-					scrub: 0.8,
-				},
+				scrollTrigger: scrollTriggerConfig,
 			});
 
 			// If we find our tagged shapes, animate each one differently for a more playful feel
@@ -182,7 +232,16 @@ export function ParallaxGsapLayer({
 			}
 		}, animatedRef);
 
+		// Refresh ScrollTrigger after DOM is ready
+		const refreshTimeout = setTimeout(() => {
+			ScrollTrigger.refresh();
+		}, 150);
+
 		return () => {
+			clearTimeout(refreshTimeout);
+			if (resizeObserver) {
+				resizeObserver.disconnect();
+			}
 			ctx.revert();
 		};
 	}, [layer]);
@@ -214,6 +273,7 @@ export function ParallaxGsapLayer({
 					alignItems: "center",
 					justifyContent: "center",
 					pointerEvents: "auto",
+					position: "relative",
 				}}
 			>
 				{children}
