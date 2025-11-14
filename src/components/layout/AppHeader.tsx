@@ -32,13 +32,13 @@ export function AppHeader() {
 					<ProfilePicture
 						src={headerView.profileImage}
 						alt={headerView.profileImageAlt}
-						size={156}
+						size={256}
 						border={true}
 						borderWidth={4}
 					/>
 				)}
 				<h1 className="profile-name text-h1 text-color-primary">{headerView.displayName}</h1>
-				{headerView.bio && <p className="profile-bio text-p text-color-muted">{headerView.bio}</p>}
+				{headerView.bio && <p className="profile-bio">{headerView.bio}</p>}
 			</div>
 		</header>
 	);

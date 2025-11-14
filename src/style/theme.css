@@ -20,26 +20,24 @@
 :root {
 	/* Brand / neutral base */
 	/* Couleurs “marque / neutres” de base */
-	--k-color-primary: #111827; /* main dark / fond sombre principal */
-	--k-color-secondary: #374151; /* secondary dark / éléments secondaires */
-	--k-color-accent: #1f2937; /* accent dark / boutons, accents */
+	--k-color-primary: #36748E; /* main dark / fond sombre principal */
+	--k-color-secondary: #8BD2D3; /* secondary dark / éléments secondaires */
+	--k-color-accent: #F1EBA8; /* accent dark / boutons, accents */
 
 	/* Text on light background */
 	/* Texte sur fond clair */
-	--k-text-main-light: #111827; /* primary text */
-	--k-text-muted-light: #4b5563; /* muted / description */
+	--k-text-main-light: #8BD2D3; /* primary text */
 
 	/* Text on dark background */
 	/* Texte sur fond sombre */
-	--k-text-main-dark: #f9fafb; /* primary text */
-	--k-text-muted-dark: #d1d5db; /* muted / description */
+	--k-text-main-dark: #F1EBA8; /* primary text */
 
 	/* Surface examples (cards, badges, etc.) */
 	/* Surfaces (cartes, badges, etc.) */
-	--k-surface-card-light: #ffffff;
-	--k-surface-card-dark: #1f2937;
-	--k-surface-card-hover-light: #f3f4f6; /* light hover for cards */
-	--k-surface-card-hover-dark: #030712; /* dark hover for cards */
+	--k-surface-card-light: #F1EBA8;
+	--k-surface-card-dark: #36748E;
+	--k-surface-card-hover-light: #FEFCCF; /* light hover for cards */
+	--k-surface-card-hover-dark: #418BA5; /* dark hover for cards */
 	--k-surface-badge-light: #374151;
 	--k-surface-badge-dark: #1f2937;
 
@@ -47,11 +45,13 @@
 	/* Couleurs texte par défaut utilisées par les utilitaires */
 	--text-color-primary: var(--k-text-main-light);
 	--text-color-muted: var(--k-text-muted-light);
+	--text-color-white: #111827; /* dark text in light mode */
 }
 
 .dark {
 	--text-color-primary: var(--k-text-main-dark);
 	--text-color-muted: var(--k-text-muted-dark);
+	--text-color-white: #ffffff; /* white text in dark mode */
 }
 
 /* 
