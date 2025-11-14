@@ -48,6 +48,8 @@
 
 	.link-card {
 		@apply flex-1 w-full bg-gray-200 text-gray-800 rounded-lg px-6 py-4 flex items-center justify-center transition-all hover:bg-gray-300 active:bg-gray-400 cursor-pointer font-medium text-sm shadow-sm;
+		transform-style: preserve-3d;
+		backface-visibility: hidden;
 	}
 
 	.link-card-thumbnail {

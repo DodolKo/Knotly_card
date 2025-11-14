@@ -17,11 +17,11 @@ function App() {
 			</ParallaxLayer>
 
 			<LayoutRender>
-				<ParallaxLayer layer={1}>
+				<ParallaxLayer layer={1} tilt={8}>
 					<AppHeader />
 				</ParallaxLayer>
 
-				<ParallaxLayer layer={2}>
+				<ParallaxLayer layer={2} tilt={8}>
 					<AppContent>
 						<LinkCard name="gumroad" />
 						<LinkCard name="koFi" />
@@ -30,7 +30,7 @@ function App() {
 					</AppContent>
 				</ParallaxLayer>
 
-				<ParallaxLayer layer={3}>
+				<ParallaxLayer layer={3} tilt={8}>
 					<AppFooter />
 				</ParallaxLayer>
 			</LayoutRender>
