@@ -46,6 +46,22 @@ function App() {
 						<LinkCard name="koFi" />
 						<LinkCard name="Home" />
 						<LinkCard mode="manual" name="Custom Link" url="https://example.com" />
+						<LinkCard 
+							mode="manual" 
+							name="Banner Thumbnail Link" 
+							url="https://example.com"
+							asThumbnail={true}
+							thumbnailFormat="banner"
+							thumbnailSrc="/media/img/thumbmail/thumbnail_16-9.png"
+						/>
+						<LinkCard 
+							mode="manual" 
+							name="Display Thumbnail Link" 
+							url="https://example.com"
+							asThumbnail={true}
+							thumbnailFormat="display"
+							thumbnailSrc="/media/img/thumbmail/thumbnail_4-3.png"
+						/>
 					</AppContent>
 				</ParallaxLayer>
 

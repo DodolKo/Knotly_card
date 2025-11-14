@@ -38,6 +38,8 @@
 	/* Surfaces (cartes, badges, etc.) */
 	--k-surface-card-light: #ffffff;
 	--k-surface-card-dark: #1f2937;
+	--k-surface-card-hover-light: #f3f4f6; /* light hover for cards */
+	--k-surface-card-hover-dark: #030712; /* dark hover for cards */
 	--k-surface-badge-light: #374151;
 	--k-surface-badge-dark: #1f2937;
 
