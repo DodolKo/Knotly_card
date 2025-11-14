@@ -33,11 +33,10 @@ export function AppHeader() {
 						size={156}
 						border={true}
 						borderWidth={4}
-						borderColor="gray-900"
 					/>
 				)}
-				<h1 className="profile-name">{headerView.displayName}</h1>
-				{headerView.bio && <p className="profile-bio">{headerView.bio}</p>}
+				<h1 className="profile-name text-h1 text-color-primary">{headerView.displayName}</h1>
+				{headerView.bio && <p className="profile-bio text-p text-color-muted">{headerView.bio}</p>}
 			</div>
 		</header>
 	);

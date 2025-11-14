@@ -109,7 +109,7 @@ export function LinkCard({
 						{asIcon && iconSrc && (
 							<img src={iconSrc} alt={`${linkData.name} icon`} className="link-card-icon" />
 						)}
-						<span className={`link-card-text ${textAlignClass}`}>{linkData.name}</span>
+						<span className={`link-card-text ${textAlignClass} text-h4 text-color-primary`}>{linkData.name}</span>
 					</div>
 					{badge && <LinkBadge text={badge} hidden={badgeHidden} />}
 				</div>

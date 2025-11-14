@@ -25,7 +25,9 @@ export function ProfilePicture({
 	const borderStyle = border
 		? {
 				borderWidth: typeof borderWidth === "number" ? `${borderWidth}px` : borderWidth,
-				borderColor: borderColor.startsWith("#") || borderColor.startsWith("rgb")
+				borderColor: borderColor && (borderColor.startsWith("#") || borderColor.startsWith("rgb"))
+					? borderColor
+					: borderColor && borderColor.startsWith("var(")
 					? borderColor
 					: undefined,
 				borderStyle: "solid" as const,

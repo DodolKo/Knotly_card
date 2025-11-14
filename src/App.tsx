@@ -3,13 +3,17 @@ import { AppHeader } from "./components/layout/AppHeader";
 import { AppContent } from "./components/layout/AppContent";
 import { AppFooter } from "./components/layout/AppFooter";
 import { LinkCard } from "./components/ui/LinkCard";
+import { LightingShader } from "./components/ui/LightingShader";
+import { SparkleField } from "./components/ui/SparkleField";
 import { Background } from "./components/ui/Background";
 import { EffectLayer } from "./components/layers";
-import { ParallaxRender, ParallaxLayer, GyroscopePermissionButton } from "./components/parallax";
+import { ShapesScrollLayer } from "./components/ui/ShapesScrollLayer";
+import { ParallaxRender, ParallaxLayer, ParallaxGsapLayer, GyroscopePermissionButton } from "./components/parallax";
 
 function App() {
 	return (
 		<ParallaxRender>
+			
 			<ParallaxLayer layer={0} tilt={15} >
 				<Background 
 					blur={2.5} 
@@ -19,7 +23,7 @@ function App() {
 			</ParallaxLayer>
 			
 
-			<ParallaxLayer layer={0.5} tilt={10}>
+			{/* <ParallaxLayer layer={0.5} tilt={10}>
 				<EffectLayer
 					layer1="/media/img/layers/layer-1.png"
 					layer2="/media/img/layers/layer-2.png"
@@ -27,7 +31,12 @@ function App() {
 					scale={115}
 					opacity={1}
 				/>
-			</ParallaxLayer>
+			</ParallaxLayer> */}
+
+			{/* GSAP scroll-driven SVG shapes layer */}
+			<ParallaxGsapLayer layer={0.8} tilt={8}>
+				<ShapesScrollLayer />
+			</ParallaxGsapLayer>
 
 			<LayoutRender>
 				<ParallaxLayer layer={1} tilt={15}>
@@ -47,6 +56,10 @@ function App() {
 					<AppFooter />
 				</ParallaxLayer>
 			</LayoutRender>
+
+			{/* <SparkleField /> */}
+			{/* <LightingShader /> */}
+
 			<GyroscopePermissionButton />
 		</ParallaxRender>
 	);

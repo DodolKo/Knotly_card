@@ -1,0 +1,77 @@
+/* 
+ * Knotly Card – Theme & Design Tokens
+ *
+ * 🇬🇧 Edit colors and fonts here (human‑friendly names).
+ * 🇫🇷 Modifie les couleurs et polices ici (noms plus parlants).
+ *
+ * This file centralizes:
+ * - Brand & neutral colors
+ * - Text colors for light / dark
+ * - Tailwind `@theme` variables used in `index.css`
+ *
+ * `index.css` imports this file and then focuses on layout, parallax
+ * and component structure.
+ */
+
+/* 
+ * Semantic color tokens
+ * Tokens sémantiques (à modifier en priorité)
+ */
+:root {
+	/* Brand / neutral base */
+	/* Couleurs “marque / neutres” de base */
+	--k-color-primary: #111827; /* main dark / fond sombre principal */
+	--k-color-secondary: #374151; /* secondary dark / éléments secondaires */
+	--k-color-accent: #1f2937; /* accent dark / boutons, accents */
+
+	/* Text on light background */
+	/* Texte sur fond clair */
+	--k-text-main-light: #111827; /* primary text */
+	--k-text-muted-light: #4b5563; /* muted / description */
+
+	/* Text on dark background */
+	/* Texte sur fond sombre */
+	--k-text-main-dark: #f9fafb; /* primary text */
+	--k-text-muted-dark: #d1d5db; /* muted / description */
+
+	/* Surface examples (cards, badges, etc.) */
+	/* Surfaces (cartes, badges, etc.) */
+	--k-surface-card-light: #ffffff;
+	--k-surface-card-dark: #1f2937;
+	--k-surface-badge-light: #374151;
+	--k-surface-badge-dark: #1f2937;
+
+	/* Default text colors used by utilities */
+	/* Couleurs texte par défaut utilisées par les utilitaires */
+	--text-color-primary: var(--k-text-main-light);
+	--text-color-muted: var(--k-text-muted-light);
+}
+
+.dark {
+	--text-color-primary: var(--k-text-main-dark);
+	--text-color-muted: var(--k-text-muted-dark);
+}
+
+/* 
+ * Tailwind CSS v4 `@theme`
+ * Mapping from Knotly tokens → Tailwind theme variables
+ * Correspondance entre les tokens Knotly et les variables de thème Tailwind
+ */
+@theme {
+	/* Fonts */
+	--font-family-sans: 'BBH Sans Hegarty', sans-serif;
+	--font-family-display: 'Short Stack', cursive;
+
+	/* Core palette – based on tokens above */
+	/* Palette principale – basée sur les tokens ci‑dessus */
+	--color-primary: var(--k-color-primary); /* dark text on light background */
+	--color-secondary: var(--k-color-secondary); /* secondary elements */
+	--color-accent: var(--k-color-accent); /* accent elements, buttons */
+
+	/* Text on dark backgrounds */
+	/* Texte sur fonds sombres */
+	--color-primary-contrast: #ffffff;
+	--color-secondary-contrast: #ffffff;
+}
+
+
