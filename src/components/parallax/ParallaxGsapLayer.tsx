@@ -116,16 +116,6 @@ export function ParallaxGsapLayer({
 					},
 					0,
 				);
-
-				// Subtle breathing animation (independent from scroll)
-				gsap.to(softStar, {
-					scale: 1.05,
-					rotation: "+=5",
-					duration: 3.2,
-					yoyo: true,
-					repeat: -1,
-					ease: "sine.inOut",
-				});
 			}
 
 			if (asterisk2) {
@@ -146,15 +136,6 @@ export function ParallaxGsapLayer({
 					},
 					0.1,
 				);
-
-				gsap.to(asterisk2, {
-					scale: 1.06,
-					rotation: "-=6",
-					duration: 2.8,
-					yoyo: true,
-					repeat: -1,
-					ease: "sine.inOut",
-				});
 			}
 
 			if (asterisk3) {
@@ -175,15 +156,6 @@ export function ParallaxGsapLayer({
 					},
 					0.2,
 				);
-
-				gsap.to(asterisk3, {
-					scale: 1.07,
-					rotation: "+=8",
-					duration: 3.4,
-					yoyo: true,
-					repeat: -1,
-					ease: "sine.inOut",
-				});
 			}
 
 			// Fallback: if no tagged shapes, animate the whole layer as before
@@ -202,14 +174,6 @@ export function ParallaxGsapLayer({
 						ease: "none",
 					},
 				);
-
-				gsap.to(element, {
-					scale: 1.04,
-					duration: 3,
-					yoyo: true,
-					repeat: -1,
-					ease: "sine.inOut",
-				});
 			}
 		}, animatedRef);
 

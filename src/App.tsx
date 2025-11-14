@@ -3,10 +3,7 @@ import { AppHeader } from "./components/layout/AppHeader";
 import { AppContent } from "./components/layout/AppContent";
 import { AppFooter } from "./components/layout/AppFooter";
 import { LinkCard } from "./components/ui/LinkCard";
-import { LightingShader } from "./components/ui/LightingShader";
-import { SparkleField } from "./components/ui/SparkleField";
 import { Background } from "./components/ui/Background";
-import { EffectLayer } from "./components/layers";
 import { ShapesScrollLayer } from "./components/ui/ShapesScrollLayer";
 import { ParallaxRender, ParallaxLayer, ParallaxGsapLayer, GyroscopePermissionButton } from "./components/parallax";
 
