@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import { fetchJson } from "../../utils/api";
 import { getLinkByName, type UserProfile } from "../../utils/user";
+import { LinkBadge } from "./LinkBadge";
+import { QRCodeModal } from "./QRCodeModal";
 
-export type ThumbnailFormat = "circle" | "square" | "none";
+export type ThumbnailFormat = "banner" | "display" | "none";
 export type TitlePosition = "center" | "left" | "right";
 
 export interface LinkCardProps {
@@ -15,6 +17,9 @@ export interface LinkCardProps {
 	thumbnailSrc?: string;
 	iconSrc?: string;
 	titlePosition?: TitlePosition;
+	badge?: string;
+	badgeHidden?: boolean;
+	qrCodeDisabled?: boolean;
 }
 
 export function LinkCard({
@@ -23,13 +28,17 @@ export function LinkCard({
 	url,
 	asThumbnail = false,
 	asIcon = false,
-	thumbnailFormat = "circle",
+	thumbnailFormat = "none",
 	thumbnailSrc,
 	iconSrc,
 	titlePosition = "center",
+	badge,
+	badgeHidden = false,
+	qrCodeDisabled = false,
 }: LinkCardProps) {
 	const [linkData, setLinkData] = useState<{ name: string; url: string } | null>(null);
 	const [loading, setLoading] = useState(mode === "auto");
+	const [qrModalOpen, setQrModalOpen] = useState(false);
 
 	useEffect(() => {
 		if (mode === "manual") {
@@ -57,6 +66,14 @@ export function LinkCard({
 		void loadLink();
 	}, [mode, name, url]);
 
+	const handleQrClick = (e: React.MouseEvent) => {
+		e.preventDefault();
+		e.stopPropagation();
+		if (!qrCodeDisabled && linkData) {
+			setQrModalOpen(true);
+		}
+	};
+
 	if (loading || !linkData) {
 		return null;
 	}
@@ -68,26 +85,75 @@ export function LinkCard({
 				? "text-right"
 				: "text-center";
 
+	const thumbnailClass =
+		thumbnailFormat === "banner"
+			? "link-card-thumbnail-banner"
+			: thumbnailFormat === "display"
+				? "link-card-thumbnail-display"
+				: "";
+
 	return (
-		<a href={linkData.url} className="link-card">
-			{asThumbnail && thumbnailSrc && (
-				<img
-					src={thumbnailSrc}
-					alt={`${linkData.name} thumbnail`}
-					className={
-						thumbnailFormat === "circle"
-							? "link-card-thumbnail-circle"
-							: thumbnailFormat === "square"
-								? "link-card-thumbnail-square"
-								: "link-card-thumbnail"
-					}
+		<>
+			<a href={linkData.url} className="link-card">
+				{asThumbnail && thumbnailSrc && thumbnailFormat !== "none" && (
+					<div className={`link-card-thumbnail-wrapper ${thumbnailClass}`}>
+						<img
+							src={thumbnailSrc}
+							alt={`${linkData.name} thumbnail`}
+							className="link-card-thumbnail-image"
+						/>
+					</div>
+				)}
+				<div className="link-card-content">
+					<div className="link-card-main">
+						{asIcon && iconSrc && (
+							<img src={iconSrc} alt={`${linkData.name} icon`} className="link-card-icon" />
+						)}
+						<span className={`link-card-text ${textAlignClass}`}>{linkData.name}</span>
+					</div>
+					{badge && <LinkBadge text={badge} hidden={badgeHidden} />}
+				</div>
+				{!qrCodeDisabled && (
+					<button
+						className="link-card-qr-button"
+						onClick={handleQrClick}
+						aria-label="Show QR code"
+						type="button"
+					>
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							width="20"
+							height="20"
+							viewBox="0 0 24 24"
+							fill="none"
+							stroke="currentColor"
+							strokeWidth="2"
+							strokeLinecap="round"
+							strokeLinejoin="round"
+						>
+							<rect width="5" height="5" x="3" y="3" rx="1" />
+							<rect width="5" height="5" x="16" y="3" rx="1" />
+							<rect width="5" height="5" x="3" y="16" rx="1" />
+							<path d="M21 16h-3" />
+							<path d="M9 21h3" />
+							<path d="M21 12v-3" />
+							<path d="M12 9H9" />
+							<path d="M12 21v-3" />
+							<path d="M12 9V3" />
+							<path d="M21 21v-3" />
+							<path d="M21 9h-3" />
+						</svg>
+					</button>
+				)}
+			</a>
+			{!qrCodeDisabled && (
+				<QRCodeModal
+					url={linkData.url}
+					name={linkData.name}
+					isOpen={qrModalOpen}
+					onClose={() => setQrModalOpen(false)}
 				/>
 			)}
-			{asIcon && iconSrc && (
-				<img src={iconSrc} alt={`${linkData.name} icon`} className="link-card-icon" />
-			)}
-			<span className={`link-card-text ${textAlignClass}`}>{linkData.name}</span>
-		</a>
+		</>
 	);
 }
-

@@ -20,6 +20,23 @@ html, body {
 	overflow-x: hidden;
 }
 
+/* Hide native scrollbars but keep scrolling enabled (cross-browser) */
+html, body, #root {
+	/* Firefox */
+	scrollbar-width: none;
+	/* IE 10+ */
+	-ms-overflow-style: none;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar,
+#root::-webkit-scrollbar {
+	/* Chrome, Safari, Opera */
+	display: none;
+	width: 0;
+	height: 0;
+}
+
 @layer components {
 
 	.background-container {
@@ -67,15 +84,27 @@ html, body {
 	}
 
 	.layout-container {
-		@apply min-h-screen flex flex-col items-center px-4 py-8 relative;
+		@apply min-h-screen flex flex-col items-stretch py-8 relative;
+		padding-left: 0.5rem;
+		padding-right: 0.5rem;
 	}
 
 	.layout-header {
-		@apply w-full max-w-md relative pt-8 pb-6;
+		@apply w-full relative pt-8 pb-6;
+		display: flex;
+		justify-content: center;
+		align-items: center;
 	}
 
 	.layout-content {
-		@apply w-full max-w-md px-4 pb-8;
+		width: 100%;
+		max-width: 100%;
+		padding: 0 0 2rem;
+		display: flex;
+		flex-direction: column;
+		align-items: stretch;
+		flex-shrink: 0;
+		align-self: stretch;
 	}
 
 	.layout-footer {
@@ -83,7 +112,14 @@ html, body {
 	}
 
 	.grid-layout {
-		@apply grid gap-3 w-full max-w-md px-4 mt-6;
+		display: grid;
+		gap: 1rem;
+		width: 100%;
+		min-width: 0;
+		margin-top: 1.5rem;
+		flex: 1;
+		/* center grid items so cards can have a max-width */
+		justify-items: center;
 	}
 
 	.grid-layout-item {
@@ -91,29 +127,162 @@ html, body {
 	}
 
 	.link-card {
-		@apply flex-1 w-full bg-gray-200 text-gray-800 rounded-lg px-6 py-4 flex items-center justify-center transition-all hover:bg-gray-300 active:bg-gray-400 cursor-pointer font-medium text-sm shadow-sm;
-		transform-style: preserve-3d;
-		backface-visibility: hidden;
+		@apply relative w-full bg-gray-200 text-gray-800 rounded-lg overflow-hidden cursor-pointer;
+		min-height: 72px;
+		display: flex;
+		flex-direction: column;
+		/* limit card width and center it (adds horizontal margin/gutter) */
+		max-width: 640px;
+		margin: 0 auto;
 	}
 
-	.link-card-thumbnail {
-		@apply shrink-0;
+	.link-card-thumbnail-banner {
+		width: 100%;
+		aspect-ratio: 16 / 9;
 	}
 
-	.link-card-thumbnail-circle {
-		@apply rounded-full shrink-0;
+	.link-card-thumbnail-display {
+		width: 100%;
+		aspect-ratio: 4 / 3;
 	}
 
-	.link-card-thumbnail-square {
-		@apply rounded shrink-0;
+	.link-card-thumbnail-image {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+
+	.link-card-content {
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		padding: 1rem 1.5rem;
+		gap: 0.5rem;
+		min-height: 72px;
+	}
+
+	.link-card-main {
+		display: flex;
+		align-items: center;
+		gap: 0.75rem;
+		width: 100%;
 	}
 
 	.link-card-text {
-		@apply w-full;
+		flex: 1;
 	}
 
 	.link-card-icon {
-		@apply shrink-0;
+		width: 24px;
+		height: 24px;
+		object-fit: contain;
+		flex-shrink: 0;
+	}
+
+	.link-card-qr-button {
+		position: absolute;
+		top: 1rem;
+		right: 1rem;
+		padding: 0.5rem;
+		border-radius: 0.5rem;
+		background: #d1d5db;
+		border: none;
+		cursor: pointer;
+		z-index: 10;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.link-badge {
+		display: inline-block;
+		padding: 0.25rem 0.5rem;
+		font-size: 0.75rem;
+		border-radius: 0.25rem;
+		background: #d1d5db;
+		color: #374151;
+		align-self: flex-start;
+	}
+
+	.qr-modal-overlay {
+		position: fixed;
+		inset: 0;
+		background: rgba(0, 0, 0, 0.5);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		z-index: 50;
+	}
+
+	.qr-modal-content {
+		background: white;
+		border-radius: 0.5rem;
+		max-width: 24rem;
+		width: 100%;
+		margin: 0 1rem;
+		display: flex;
+		flex-direction: column;
+		max-height: 90vh;
+		overflow-y: auto;
+	}
+
+	.qr-modal-header {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 1rem;
+		border-bottom: 1px solid #e5e7eb;
+	}
+
+	.qr-modal-title {
+		font-size: 1.125rem;
+		font-weight: 600;
+		color: #111827;
+	}
+
+	.qr-modal-close {
+		font-size: 1.5rem;
+		color: #6b7280;
+		width: 2rem;
+		height: 2rem;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border-radius: 0.25rem;
+		border: none;
+		background: none;
+		cursor: pointer;
+		line-height: 1;
+	}
+
+	.qr-modal-body {
+		padding: 1.5rem;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 1rem;
+	}
+
+	.qr-code-container {
+		padding: 1rem;
+		background: white;
+		border-radius: 0.5rem;
+		border: 2px solid #e5e7eb;
+	}
+
+	.qr-modal-link-name {
+		font-size: 1.125rem;
+		font-weight: 600;
+		color: #111827;
+		text-align: center;
+	}
+
+	.qr-modal-link-url {
+		font-size: 0.875rem;
+		color: #4b5563;
+		text-align: center;
+		word-break: break-all;
 	}
 
 	.profile-section {
