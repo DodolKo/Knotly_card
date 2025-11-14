@@ -63,8 +63,25 @@ export function ParallaxLayer({ layer, children, intensity = PARALLAX_INTENSITY,
 		};
 	}, [mousePosition, deviceOrientation, isMobile, layer, intensity, tilt]);
 
+	// For layer 0 (Background) and layers < 1 (EffectLayer), we need to preserve position: fixed
+	// We apply transforms directly without creating a new stacking context
+	const isFixedLayer = layer === 0 || (layer > 0 && layer < 1);
+	const zIndexValue = layer === 0 ? -10 : layer < 1 ? -5 : undefined;
+
 	return (
-		<div ref={layerRef} style={{ willChange: "transform", transformStyle: "preserve-3d" }}>
+		<div 
+			ref={layerRef} 
+			style={{ 
+				willChange: "transform", 
+				transformStyle: "preserve-3d",
+				position: isFixedLayer ? "fixed" : "relative",
+				inset: isFixedLayer ? 0 : undefined,
+				pointerEvents: isFixedLayer ? "none" : "auto",
+				zIndex: zIndexValue,
+				width: isFixedLayer ? "100%" : undefined,
+				height: isFixedLayer ? "100%" : undefined,
+			}}
+		>
 			{children}
 		</div>
 	);

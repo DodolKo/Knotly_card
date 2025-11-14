@@ -6,10 +6,24 @@
 	--font-family-display: 'Short Stack', cursive;
 }
 
+/* Prevent horizontal overflow from parallax effects */
+html, body {
+	overflow-x: hidden;
+	overflow-y: auto;
+	width: 100%;
+	min-height: 100%;
+}
+
+#root {
+	width: 100%;
+	min-height: 100%;
+	overflow-x: hidden;
+}
+
 @layer components {
 
 	.background-container {
-		@apply fixed inset-0 -z-10;
+		@apply absolute inset-0 -z-10;
 	}
 
 	.background-mobile {
@@ -20,6 +34,36 @@
 	.background-desktop {
 		@apply absolute inset-0 bg-cover bg-center bg-no-repeat hidden md:block;
 		background-image: url('/media/img/DesktopBackground.png');
+	}
+
+	.effect-layer-container {
+		@apply absolute inset-0 pointer-events-none;
+		width: 100%;
+		height: 100%;
+		z-index: 0;
+	}
+
+	.effect-layer {
+		@apply absolute inset-0 bg-cover bg-center bg-no-repeat;
+		will-change: transform;
+		transform-style: preserve-3d;
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+	}
+
+	.effect-layer-1 {
+		z-index: 1;
+	}
+
+	.effect-layer-2 {
+		z-index: 2;
+	}
+
+	.effect-layer-3 {
+		z-index: 3;
 	}
 
 	.layout-container {

@@ -30,7 +30,7 @@ export function AppHeader() {
 					<ProfilePicture
 						src={headerView.profileImage}
 						alt={headerView.profileImageAlt}
-						size={96}
+						size={156}
 						border={true}
 						borderWidth={4}
 						borderColor="gray-900"
