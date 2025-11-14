@@ -83,6 +83,10 @@ export function ParallaxGsapLayer({
 			const element = animatedRef.current;
 			if (!element) return;
 
+			// Make movement distances responsive to viewport height
+			const viewportHeight = typeof window !== "undefined" ? window.innerHeight : 800;
+			const travelY = viewportHeight * 0.6 * layer;
+
 			// Try to target fun shape-specific elements if they exist
 			const softStar = element.querySelector('[data-shape="soft-star"]');
 			const asterisk2 = element.querySelector('[data-shape="asterisk-2"]');
@@ -92,8 +96,9 @@ export function ParallaxGsapLayer({
 				scrollTrigger: {
 					trigger: element,
 					start: "top bottom", // when element enters the viewport
-					end: "bottom top", // when element leaves the viewport
-					scrub: true,
+					// Stretch animation across a longer scroll distance
+					end: "+=250%",
+					scrub: 0.8,
 				},
 			});
 
@@ -103,13 +108,13 @@ export function ParallaxGsapLayer({
 					softStar,
 					{
 						x: -80,
-						y: 120,
+						y: travelY,
 						scale: 0.9,
 						rotation: -20,
 					},
 					{
 						x: 40,
-						y: -100,
+						y: -travelY,
 						scale: 1.2,
 						rotation: 35,
 						ease: "power2.inOut",
@@ -123,13 +128,13 @@ export function ParallaxGsapLayer({
 					asterisk2,
 					{
 						x: 60,
-						y: 60,
+						y: travelY * 0.4,
 						scale: 0.8,
 						rotation: 0,
 					},
 					{
 						x: -80,
-						y: -160,
+						y: -travelY * 0.8,
 						scale: 1.15,
 						rotation: -45,
 						ease: "power1.inOut",
@@ -143,13 +148,13 @@ export function ParallaxGsapLayer({
 					asterisk3,
 					{
 						x: -40,
-						y: 180,
+						y: travelY * 0.9,
 						scale: 0.85,
 						rotation: 15,
 					},
 					{
 						x: 70,
-						y: -140,
+						y: -travelY * 0.7,
 						scale: 1.25,
 						rotation: 90,
 						ease: "power3.inOut",

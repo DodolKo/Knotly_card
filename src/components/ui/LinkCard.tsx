@@ -10,6 +10,10 @@ export type TitlePosition = "center" | "left" | "right";
 export interface LinkCardProps {
 	mode?: "auto" | "manual";
 	name: string;
+	/** Optional custom background color for the whole card */
+	backgroundColor?: string;
+	/** Optional custom text color for the title */
+	textColor?: string;
 	url?: string;
 	asThumbnail?: boolean;
 	asIcon?: boolean;
@@ -25,6 +29,8 @@ export interface LinkCardProps {
 export function LinkCard({
 	mode = "auto",
 	name,
+	backgroundColor,
+	textColor,
 	url,
 	asThumbnail = false,
 	asIcon = false,
@@ -94,7 +100,11 @@ export function LinkCard({
 
 	return (
 		<>
-			<a href={linkData.url} className="link-card">
+			<a
+				href={linkData.url}
+				className="link-card"
+				style={backgroundColor ? { backgroundColor } : undefined}
+			>
 				{asThumbnail && thumbnailSrc && thumbnailFormat !== "none" && (
 					<div className={`link-card-thumbnail-wrapper ${thumbnailClass}`}>
 						<img
@@ -109,7 +119,12 @@ export function LinkCard({
 						{asIcon && iconSrc && (
 							<img src={iconSrc} alt={`${linkData.name} icon`} className="link-card-icon" />
 						)}
-						<span className={`link-card-text ${textAlignClass} text-h4 text-color-primary`}>{linkData.name}</span>
+						<span
+							className={`link-card-text ${textAlignClass} text-h4 text-color-primary`}
+							style={textColor ? { color: textColor } : undefined}
+						>
+							{linkData.name}
+						</span>
 					</div>
 					{badge && <LinkBadge text={badge} hidden={badgeHidden} />}
 				</div>

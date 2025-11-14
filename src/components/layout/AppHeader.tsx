@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { fetchJson } from "../../utils/api";
 import { mapUserToHeaderView, type UserHeaderView, type UserProfile } from "../../utils/user";
 import { ProfilePicture } from "../ui/ProfilePicture";
+import { DarkModeToggle } from "../ui/DarkModeToggle";
 
 export function AppHeader() {
 	const [headerView, setHeaderView] = useState<UserHeaderView | null>(null);
@@ -25,6 +26,7 @@ export function AppHeader() {
 
 	return (
 		<header className="layout-header">
+			<DarkModeToggle />
 			<div className="profile-section">
 				{headerView.profileImage && (
 					<ProfilePicture
