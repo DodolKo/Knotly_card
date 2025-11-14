@@ -1,0 +1,101 @@
+{
+  "personal": {
+    "name": "",
+    "firstName": "",
+    "lastName": "",
+    "age": "",
+    "birthday": "",
+    "location": "",
+    "city": "",
+    "country": "",
+    "timezone": "",
+    "bio": "",
+    "tagline": "",
+    "pronouns": "",
+    "occupation": "",
+    "company": "",
+    "jobTitle": ""
+  },
+  "contact": {
+    "email": "",
+    "phone": "",
+    "website": "",
+    "address": "",
+    "postalCode": ""
+  },
+  "social": {
+    "facebook": "",
+    "twitter": "",
+    "instagram": "",
+    "linkedin": "",
+    "youtube": "",
+    "tiktok": "",
+    "snapchat": "",
+    "pinterest": "",
+    "reddit": "",
+    "discord": "",
+    "twitch": "",
+    "github": "",
+    "gitlab": "",
+    "behance": "",
+    "dribbble": "",
+    "medium": "",
+    "devto": "",
+    "stackoverflow": "",
+    "telegram": "",
+    "whatsapp": "",
+    "signal": "",
+    "mastodon": "",
+    "bluesky": "",
+    "threads": "",
+    "xing": "",
+    "vimeo": "",
+    "spotify": "",
+    "soundcloud": "",
+    "bandcamp": "",
+    "appleMusic": "",
+    "patreon": "",
+    "koFi": "",
+    "buyMeACoffee": "",
+    "onlyfans": "",
+    "fansly": "",
+    "customSocial": []
+  },
+  "shop": {
+    "etsy": "",
+    "shopify": "",
+    "bigcartel": "",
+    "redbubble": "",
+    "teepublic": "",
+    "society6": "",
+    "zazzle": "",
+    "cafepress": "",
+    "printful": "",
+    "gumroad": "",
+    "sellfy": "",
+    "customShop": []
+  },
+  "media": {
+    "profileImage": "",
+    "coverImage": "",
+    "avatar": "",
+    "logo": "",
+    "banner": "",
+    "gallery": []
+  },
+  "preferences": {
+    "theme": "",
+    "language": "",
+    "currency": "",
+    "colorScheme": ""
+  },
+  "custom": {
+    "customFields": []
+  },
+  "metadata": {
+    "createdAt": "",
+    "updatedAt": "",
+    "version": ""
+  }
+}
+

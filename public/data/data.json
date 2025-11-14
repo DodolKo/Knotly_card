@@ -1,0 +1,131 @@
+{
+  "personal": {
+    "name": "Knotly",
+    "firstName": "Link",
+    "lastName": "Knotly",
+    "age": "28",
+    "birthday": "2024-01-15",
+    "location": "San Francisco, CA",
+    "city": "San Francisco",
+    "country": "United States",
+    "timezone": "America/Los_Angeles",
+    "bio": "Digital business card enthusiast & professional networker. I turn handshakes into hyperlinks and business cards into beautiful web experiences. When I'm not connecting people, I'm probably debugging CSS at 2 AM or perfecting my coffee-to-code ratio.",
+    "tagline": "Connecting the world, one card at a time 🎴",
+    "pronouns": "they/them",
+    "occupation": "Full Stack Developer & Digital Card Creator",
+    "company": "Knotly Inc.",
+    "jobTitle": "Chief Connection Officer"
+  },
+  "contact": {
+    "email": "hello@knotly.app",
+    "phone": "+1 (555) KNOT-LY1",
+    "website": "https://knotly.app",
+    "address": "123 Innovation Drive, Suite 404",
+    "postalCode": "94102"
+  },
+  "social": {
+    "facebook": "https://facebook.com/knotly",
+    "twitter": "https://twitter.com/knotly",
+    "instagram": "https://instagram.com/knotly",
+    "linkedin": "https://linkedin.com/company/knotly",
+    "youtube": "https://youtube.com/@knotly",
+    "tiktok": "https://tiktok.com/@knotly",
+    "snapchat": "",
+    "pinterest": "https://pinterest.com/knotly",
+    "reddit": "https://reddit.com/r/knotly",
+    "discord": "https://discord.gg/knotly",
+    "twitch": "https://twitch.tv/knotly",
+    "github": "https://github.com/knotly",
+    "gitlab": "https://gitlab.com/knotly",
+    "behance": "https://behance.net/knotly",
+    "dribbble": "https://dribbble.com/knotly",
+    "medium": "https://medium.com/@knotly",
+    "devto": "https://dev.to/knotly",
+    "stackoverflow": "https://stackoverflow.com/users/knotly",
+    "telegram": "https://t.me/knotly",
+    "whatsapp": "",
+    "signal": "",
+    "mastodon": "https://mastodon.social/@knotly",
+    "bluesky": "https://bsky.app/profile/knotly.bsky.social",
+    "threads": "https://threads.net/@knotly",
+    "xing": "",
+    "vimeo": "https://vimeo.com/knotly",
+    "spotify": "https://open.spotify.com/user/knotly",
+    "soundcloud": "https://soundcloud.com/knotly",
+    "bandcamp": "",
+    "appleMusic": "",
+    "patreon": "https://patreon.com/knotly",
+    "koFi": "https://ko-fi.com/knotly",
+    "buyMeACoffee": "https://buymeacoffee.com/knotly",
+    "onlyfans": "",
+    "fansly": "",
+    "customSocial": [
+      {
+        "name": "Product Hunt",
+        "url": "https://producthunt.com/@knotly"
+      },
+      {
+        "name": "Indie Hackers",
+        "url": "https://indiehackers.com/knotly"
+      }
+    ]
+  },
+  "shop": {
+    "etsy": "https://knotly.etsy.com",
+    "shopify": "https://knotly-shop.myshopify.com",
+    "bigcartel": "",
+    "redbubble": "https://redbubble.com/people/knotly",
+    "teepublic": "https://teepublic.com/user/knotly",
+    "society6": "https://society6.com/knotly",
+    "zazzle": "",
+    "cafepress": "",
+    "printful": "",
+    "gumroad": "https://gumroad.com/knotly",
+    "sellfy": "https://knotly.sellfy.store",
+    "customShop": [
+      {
+        "name": "Knotly Merch Store",
+        "url": "https://merch.knotly.app"
+      }
+    ]
+  },
+  "media": {
+    "profileImage": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=400",
+    "coverImage": "https://images.unsplash.com/photo-1557683316-973673baf926?w=1200",
+    "avatar": "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=200",
+    "logo": "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=200",
+    "banner": "https://images.unsplash.com/photo-1557683316-973673baf926?w=1600",
+    "gallery": [
+      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800",
+      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800",
+      "https://images.unsplash.com/photo-1551434678-e076c223a692?w=800"
+    ]
+  },
+  "preferences": {
+    "theme": "modern",
+    "language": "en",
+    "currency": "USD",
+    "colorScheme": "dark"
+  },
+  "custom": {
+    "customFields": [
+      {
+        "label": "Favorite Quote",
+        "value": "The best way to predict the future is to create it. Also, always commit your code before coffee breaks."
+      },
+      {
+        "label": "Fun Fact",
+        "value": "I once debugged a production issue while skydiving. The WiFi was surprisingly good up there."
+      },
+      {
+        "label": "Availability",
+        "value": "Open for collaborations, coffee chats, and code reviews"
+      }
+    ]
+  },
+  "metadata": {
+    "createdAt": "2024-01-15T10:00:00Z",
+    "updatedAt": "2024-12-19T14:30:00Z",
+    "version": "1.0.0"
+  }
+}
