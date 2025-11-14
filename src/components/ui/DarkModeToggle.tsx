@@ -50,7 +50,7 @@ export function DarkModeToggle() {
 			<img
 				src={theme === "dark" ? "/icons/moon.svg" : "/icons/sun.svg"}
 				alt={theme === "dark" ? "Dark mode" : "Light mode"}
-				className="dark-mode-toggle-icon"
+				className={`dark-mode-toggle-icon ${theme === "dark" ? "dark-mode-toggle-moon" : "dark-mode-toggle-sun"}`}
 			/>
 		</button>
 	);
