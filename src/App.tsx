@@ -40,7 +40,7 @@ function App() {
 					<AppHeader />
 				</ParallaxLayer>
 
-				<ParallaxLayer layer={2} tilt={25}>
+				<ParallaxLayer layer={2} tilt={15}>
 					<AppContent>
 						<LinkCard name="gumroad" />
 						<LinkCard name="koFi" />

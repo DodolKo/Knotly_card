@@ -135,29 +135,7 @@ export function LinkCard({
 						aria-label="Show QR code"
 						type="button"
 					>
-						<svg
-							xmlns="http://www.w3.org/2000/svg"
-							width="20"
-							height="20"
-							viewBox="0 0 24 24"
-							fill="none"
-							stroke="currentColor"
-							strokeWidth="2"
-							strokeLinecap="round"
-							strokeLinejoin="round"
-						>
-							<rect width="5" height="5" x="3" y="3" rx="1" />
-							<rect width="5" height="5" x="16" y="3" rx="1" />
-							<rect width="5" height="5" x="3" y="16" rx="1" />
-							<path d="M21 16h-3" />
-							<path d="M9 21h3" />
-							<path d="M21 12v-3" />
-							<path d="M12 9H9" />
-							<path d="M12 21v-3" />
-							<path d="M12 9V3" />
-							<path d="M21 21v-3" />
-							<path d="M21 9h-3" />
-						</svg>
+						<img src="/icons/qr_code.svg" alt="QR code" className="link-card-qr-icon" />
 					</button>
 				)}
 			</a>

@@ -14,7 +14,7 @@ export function ProfilePicture({
 	size = 96,
 	border = true,
 	borderWidth = 4,
-	borderColor = "gray-900",
+	borderColor,
 	className = "",
 }: ProfilePictureProps) {
 	const sizeStyle = {
@@ -22,21 +22,18 @@ export function ProfilePicture({
 		height: typeof size === "number" ? `${size}px` : size,
 	};
 
+	const defaultBorderColor = "var(--k-color-primary)";
+	const finalBorderColor = borderColor || defaultBorderColor;
+
 	const borderStyle = border
 		? {
 				borderWidth: typeof borderWidth === "number" ? `${borderWidth}px` : borderWidth,
-				borderColor: borderColor && (borderColor.startsWith("#") || borderColor.startsWith("rgb"))
-					? borderColor
-					: borderColor && borderColor.startsWith("var(")
-					? borderColor
+				borderColor: finalBorderColor.startsWith("var(") || finalBorderColor.startsWith("#") || finalBorderColor.startsWith("rgb")
+					? finalBorderColor
 					: undefined,
 				borderStyle: "solid" as const,
 			}
 		: { border: "none" };
-
-	const borderClass = border && !borderColor.startsWith("#") && !borderColor.startsWith("rgb")
-		? `border-${borderWidth} border-${borderColor}`
-		: "";
 
 	return (
 		<figure>
@@ -44,7 +41,7 @@ export function ProfilePicture({
 				src={src}
 				alt={alt}
 				loading="eager"
-				className={`profile-image rounded-full object-cover shadow-lg ${borderClass} ${className}`.trim()}
+				className={`profile-image rounded-full object-cover ${className}`.trim()}
 				style={{ ...sizeStyle, ...borderStyle }}
 			/>
 		</figure>

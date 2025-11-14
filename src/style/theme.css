@@ -1,79 +1,46 @@
-/* 
- * Knotly Card – Theme & Design Tokens
- *
- * 🇬🇧 Edit colors and fonts here (human‑friendly names).
- * 🇫🇷 Modifie les couleurs et polices ici (noms plus parlants).
- *
- * This file centralizes:
- * - Brand & neutral colors
- * - Text colors for light / dark
- * - Tailwind `@theme` variables used in `index.css`
- *
- * `index.css` imports this file and then focuses on layout, parallax
- * and component structure.
- */
-
-/* 
- * Semantic color tokens
- * Tokens sémantiques (à modifier en priorité)
- */
 :root {
-	/* Brand / neutral base */
-	/* Couleurs “marque / neutres” de base */
-	--k-color-primary: #36748E; /* main dark / fond sombre principal */
-	--k-color-secondary: #8BD2D3; /* secondary dark / éléments secondaires */
-	--k-color-accent: #F1EBA8; /* accent dark / boutons, accents */
+	--k-color-primary: #36748E;
+	--k-color-secondary: #8BD2D3;
+	--k-color-accent: #F1EBA8;
 
-	/* Text on light background */
-	/* Texte sur fond clair */
-	--k-text-main-light: #8BD2D3; /* primary text */
+	--k-text-main-light: #8BD2D3;
+	--k-text-muted-light: var(--k-color-primary);
+	--k-text-main-dark: #F1EBA8;
+	--k-text-muted-dark: var(--k-color-secondary);
 
-	/* Text on dark background */
-	/* Texte sur fond sombre */
-	--k-text-main-dark: #F1EBA8; /* primary text */
-
-	/* Surface examples (cards, badges, etc.) */
-	/* Surfaces (cartes, badges, etc.) */
 	--k-surface-card-light: #F1EBA8;
 	--k-surface-card-dark: #36748E;
-	--k-surface-card-hover-light: #FEFCCF; /* light hover for cards */
-	--k-surface-card-hover-dark: #418BA5; /* dark hover for cards */
-	--k-surface-badge-light: #374151;
-	--k-surface-badge-dark: #1f2937;
+	--k-surface-card-hover-light: #FEFCCF;
+	--k-surface-card-hover-dark: #418BA5;
+	--k-surface-badge-light: var(--k-color-primary);
+	--k-surface-badge-dark: var(--k-color-accent);
 
-	/* Default text colors used by utilities */
-	/* Couleurs texte par défaut utilisées par les utilitaires */
+	--k-border-light: var(--k-color-primary);
+	--k-border-dark: var(--k-color-accent);
+	--k-overlay-background: var(--k-color-primary);
+
 	--text-color-primary: var(--k-text-main-light);
 	--text-color-muted: var(--k-text-muted-light);
-	--text-color-white: #111827; /* dark text in light mode */
 }
 
 .dark {
 	--text-color-primary: var(--k-text-main-dark);
 	--text-color-muted: var(--k-text-muted-dark);
-	--text-color-white: #ffffff; /* white text in dark mode */
 }
 
-/* 
- * Tailwind CSS v4 `@theme`
- * Mapping from Knotly tokens → Tailwind theme variables
- * Correspondance entre les tokens Knotly et les variables de thème Tailwind
- */
 @theme {
-	/* Fonts */
 	--font-family-sans: 'BBH Sans Hegarty', sans-serif;
 	--font-family-display: 'Short Stack', cursive;
 
-	/* Core palette – based on tokens above */
-	/* Palette principale – basée sur les tokens ci‑dessus */
-	--color-primary: var(--k-color-primary); /* dark text on light background */
-	--color-secondary: var(--k-color-secondary); /* secondary elements */
-	--color-accent: var(--k-color-accent); /* accent elements, buttons */
+	--color-primary: var(--k-color-primary);
+	--color-secondary: var(--k-color-secondary);
+	--color-accent: var(--k-color-accent);
 
-	/* Text on dark backgrounds */
-	/* Texte sur fonds sombres */
-	--color-primary-contrast: #ffffff;
-	--color-secondary-contrast: #ffffff;
+	--color-primary-contrast: var(--k-color-secondary);
+	--color-secondary-contrast: var(--k-color-accent);
+	--color-icon-contrast: var(--k-color-primary);
 }
 
-
+.dark {
+	--color-icon-contrast: var(--k-color-accent);
+}
