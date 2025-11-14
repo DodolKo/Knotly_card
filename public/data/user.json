@@ -1,0 +1,116 @@
+{
+    "personal": {
+      "name": "@Knotly",
+      "firstName": "Doko",
+      "lastName": "",
+      "age": "6",
+      "birthday": "26-07-2001",
+      "location": "Belgium",
+      "city": "Auvelais",
+      "country": "",
+      "timezone": "",
+      "bio": "Salut !",
+      "tagline": "T'as des jeux sur ton téléphone",
+      "pronouns": "he/him",
+      "occupation": "",
+      "company": "Doko Foundation",
+      "jobTitle": "Soutient morale de l'équipe"
+    },
+    "contact": {
+      "email": "contact@dokonet.com",
+      "phone": "",
+      "website": "https://dodolko.com",
+      "address": "",
+      "postalCode": ""
+    },
+    "social": {
+      "facebook": "https://facebook.com/dodolko",
+      "twitter": "",
+      "instagram": "https://instagram.com/dodolko",
+      "linkedin": "https://linkedin.com/in/dodolko",
+      "youtube": "https://youtube.com/@dodolko",
+      "tiktok": "",
+      "snapchat": "",
+      "pinterest": "",
+      "reddit": "",
+      "discord": "",
+      "twitch": "",
+      "github": "https://github.com/dodolko",
+      "gitlab": "",
+      "behance": "",
+      "dribbble": "",
+      "medium": "",
+      "devto": "",
+      "stackoverflow": "",
+      "telegram": "",
+      "whatsapp": "",
+      "signal": "",
+      "mastodon": "",
+      "bluesky": "",
+      "threads": "",
+      "xing": "",
+      "vimeo": "",
+      "spotify": "",
+      "soundcloud": "",
+      "bandcamp": "",
+      "appleMusic": "",
+      "patreon": "",
+      "koFi": "https://ko-fi.com/dodolko",
+      "buyMeACoffee": "",
+      "onlyfans": "",
+      "fansly": "",
+      "customSocial": [
+        {
+          "name": "Home",
+          "url": "https://dodolko.com"
+        },
+        {
+          "name": "About Us",
+          "url": "https://dodolko.com/about"
+        },
+        {
+          "name": "Services",
+          "url": "https://dodolko.com/services"
+        }
+      ]
+    },
+    "shop": {
+      "etsy": "",
+      "shopify": "",
+      "bigcartel": "",
+      "redbubble": "",
+      "teepublic": "",
+      "society6": "",
+      "zazzle": "",
+      "cafepress": "",
+      "printful": "",
+      "gumroad": "https://dodolko.gumroad.com",
+      "sellfy": "",
+      "customShop": []
+    },
+    "media": {
+      "profileImage": "/media/img/profilePicture.png",
+      "coverImage": "/media/img/MobileBackground.png",
+      "avatar": "/media/img/profilePicture.png",
+      "logo": "",
+      "banner": "/media/img/DesktopBackground.png",
+      "gallery": []
+    },
+    "preferences": {
+      "theme": "",
+      "language": "",
+      "currency": "",
+      "colorScheme": "",
+      "displayLinks": ["gumroad", "koFi", "Home", "About Us", "Services"]
+    },
+    "custom": {
+      "customFields": []
+    },
+    "metadata": {
+      "createdAt": "",
+      "updatedAt": "",
+      "version": ""
+    }
+  }
+  
+  

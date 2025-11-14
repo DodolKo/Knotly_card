@@ -1,7 +1,11 @@
+import { dirname, resolve } from "node:path";
+import { fileURLToPath } from "node:url";
 import tailwindcss from "@tailwindcss/vite";
 import react from "@vitejs/plugin-react";
 import { defineConfig } from "vite";
 import { VitePWA } from "vite-plugin-pwa";
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -108,7 +112,14 @@ export default defineConfig({
 				globIgnores: ["**/*"],
 				runtimeCaching: [],
 				navigateFallback: null,
+				// NoCache mode - disable all caching
+				cleanupOutdatedCaches: true,
 			},
 		}),
 	],
+	resolve: {
+		alias: {
+			"@": resolve(__dirname, "src"),
+		},
+	},
 });

@@ -1,1 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=BBH+Sans+Hegarty&family=Short+Stack&display=swap');
 @import "tailwindcss";
+
+@theme {
+	--font-family-sans: 'BBH Sans Hegarty', sans-serif;
+	--font-family-display: 'Short Stack', cursive;
+}
+
+@layer components {
+
+	.background-container {
+		@apply fixed inset-0 -z-10;
+	}
+
+	.background-mobile {
+		@apply absolute inset-0 bg-cover bg-center bg-no-repeat md:hidden;
+		background-image: url('/media/img/MobileBackground.png');
+	}
+
+	.background-desktop {
+		@apply absolute inset-0 bg-cover bg-center bg-no-repeat hidden md:block;
+		background-image: url('/media/img/DesktopBackground.png');
+	}
+
+	.layout-container {
+		@apply min-h-screen flex flex-col items-center px-4 py-8 relative;
+	}
+
+	.layout-header {
+		@apply w-full max-w-md relative pt-8 pb-6;
+	}
+
+	.layout-content {
+		@apply w-full max-w-md px-4 pb-8;
+	}
+
+	.layout-footer {
+		@apply w-full text-center text-xs text-gray-500 mt-8 pb-4;
+	}
+
+	.grid-layout {
+		@apply grid gap-3 w-full max-w-md px-4 mt-6;
+	}
+
+	.grid-layout-item {
+		@apply w-full;
+	}
+
+	.link-card {
+		@apply flex-1 w-full bg-gray-200 text-gray-800 rounded-lg px-6 py-4 flex items-center justify-center transition-all hover:bg-gray-300 active:bg-gray-400 cursor-pointer font-medium text-sm shadow-sm;
+	}
+
+	.link-card-thumbnail {
+		@apply shrink-0;
+	}
+
+	.link-card-thumbnail-circle {
+		@apply rounded-full shrink-0;
+	}
+
+	.link-card-thumbnail-square {
+		@apply rounded shrink-0;
+	}
+
+	.link-card-text {
+		@apply w-full;
+	}
+
+	.link-card-icon {
+		@apply shrink-0;
+	}
+
+	.profile-section {
+		@apply flex flex-col items-center gap-2 relative z-10;
+	}
+
+	.profile-image {
+		@apply rounded-full w-24 h-24 border-4 object-cover shadow-lg;
+	}
+
+	.profile-name {
+		@apply text-white text-xl font-normal tracking-wide text-center;
+		font-family: var(--font-family-display);
+	}
+
+	.profile-bio {
+		@apply text-white text-xs font-normal uppercase tracking-wider text-center opacity-90;
+		font-family: var(--font-family-display);
+	}
+}
+
+
+@layer utilities {
+
+}
+
