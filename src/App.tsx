@@ -44,7 +44,7 @@ function App() {
 
 					<ParallaxLayer layer={2} tilt={15}>
 						<AppContent>
-							<LinkCard name="gumroad" />
+							<LinkCard name="gumroad" badgeHidden={false} />
 							<LinkCard name="koFi" />
 							<LinkCard name="Home" />
 							<LinkCard mode="manual" name="Custom Link" url="https://example.com" />

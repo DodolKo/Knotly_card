@@ -33,3 +33,4 @@ Knotly is a **Progressive Web App (PWA)** that functions as a customizable link-
 ## Goal
 Create an easy-to-use, customizable link aggregation platform where users can showcase multiple links in a single, personalized page that matches their brand identity.
 
+
