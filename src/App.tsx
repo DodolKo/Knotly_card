@@ -12,9 +12,9 @@ function App() {
 	return (
 		<ParallaxRender>
 			
-			<ParallaxLayer layer={0} tilt={15} >
+			<ParallaxLayer layer={0} tilt={0} >
 				<Background 
-					blur={2.5} 
+					blur={5.0} 
 					frost={true}
 					scale={125}
 				/>
@@ -33,16 +33,16 @@ function App() {
 				}}
 			>
 				{/* GSAP scroll-driven SVG shapes layer */}
-				<ParallaxGsapLayer layer={0.8} tilt={8}>
+				<ParallaxGsapLayer layer={0.8} tilt={35}>
 					<ShapesScrollLayer />
 				</ParallaxGsapLayer>
 
 				<LayoutRender>
-					<ParallaxLayer layer={1} tilt={15}>
+					<ParallaxLayer layer={1} tilt={35}>
 						<AppHeader />
 					</ParallaxLayer>
 
-					<ParallaxLayer layer={2} tilt={15}>
+					<ParallaxLayer layer={2} tilt={35}>
 						<AppContent>
 							<LinkCard name="gumroad" badgeHidden={false} />
 							<LinkCard name="koFi" />
@@ -67,7 +67,7 @@ function App() {
 						</AppContent>
 					</ParallaxLayer>
 
-					<ParallaxLayer layer={3} tilt={15}>
+					<ParallaxLayer layer={3} tilt={35}>
 						<AppFooter />
 					</ParallaxLayer>
 				</LayoutRender>

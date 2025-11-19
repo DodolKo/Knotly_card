@@ -19,7 +19,7 @@
 	--k-border-dark: var(--k-color-accent);
 	--k-overlay-background: var(--k-color-primary);
 
-	--text-color-primary: var(--k-text-main-light)
+	--text-color-primary: var(--k-text-main-light);
 	--text-color-muted: var(--k-text-muted-light);
 }
 
