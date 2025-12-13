@@ -37,8 +37,7 @@ export function AppHeader({ textBorder = false }: AppHeaderProps = {}) {
 						src={headerView.profileImage}
 						alt={headerView.profileImageAlt}
 						size={256}
-						border={true}
-						borderWidth={4}
+						border={false}
 					/>
 				)}
 				<h1 className={`profile-name text-h1 text-color-primary ${textBorder ? 'profile-name-bordered' : ''}`}>{headerView.displayName}</h1>

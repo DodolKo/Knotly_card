@@ -1,41 +1,41 @@
 {
     "personal": {
-      "name": "@Dodolko",
-      "firstName": "Doko",
+      "name": "@cru_nchies",
+      "firstName": "Crunchies",
       "lastName": "",
-      "age": "6",
-      "birthday": "26-07-2001",
-      "location": "Belgium",
-      "city": "Auvelais",
+      "age": "",
+      "birthday": "",
+      "location": "",
+      "city": "",
       "country": "",
       "timezone": "",
-      "bio": "UX / UI designer et Développeur Front End, ",
-      "tagline": "T'as des jeux sur ton téléphone ?",
-      "pronouns": "he/him",
+      "bio": "Pâtisseries artisanales faites avec amour",
+      "tagline": "Pâtisseries artisanales faites avec amour",
+      "pronouns": "",
       "occupation": "",
-      "company": "Doko Foundation",
-      "jobTitle": "Soutient morale de l'équipe"
+      "company": "Crunchies",
+      "jobTitle": "Pâtisserie artisanale"
     },
     "contact": {
-      "email": "contact@dokonet.com",
+      "email": "",
       "phone": "",
-      "website": "https://dodolko.com",
+      "website": "https://crunchies-bakery.vercel.app/",
       "address": "",
       "postalCode": ""
     },
     "social": {
-      "facebook": "https://facebook.com/dodolko",
+      "facebook": "",
       "twitter": "",
-      "instagram": "https://instagram.com/dodolko",
-      "linkedin": "https://linkedin.com/in/dodolko",
-      "youtube": "https://youtube.com/@dodolko",
+      "instagram": "https://www.instagram.com/cru_nchies?igsh=eGwwYTgybGtyZ2E=",
+      "linkedin": "",
+      "youtube": "",
       "tiktok": "",
       "snapchat": "",
       "pinterest": "",
       "reddit": "",
       "discord": "",
       "twitch": "",
-      "github": "https://github.com/dodolko",
+      "github": "",
       "gitlab": "",
       "behance": "",
       "dribbble": "",
@@ -55,22 +55,18 @@
       "bandcamp": "",
       "appleMusic": "",
       "patreon": "",
-      "koFi": "https://ko-fi.com/dodolko",
+      "koFi": "",
       "buyMeACoffee": "",
       "onlyfans": "",
       "fansly": "",
       "customSocial": [
         {
-          "name": "Home",
-          "url": "https://dodolko.com"
+          "name": "Site Web",
+          "url": "https://crunchies-bakery.vercel.app/"
         },
         {
-          "name": "About Us",
-          "url": "https://dodolko.com/about"
-        },
-        {
-          "name": "Services",
-          "url": "https://dodolko.com/services"
+          "name": "Instagram",
+          "url": "https://www.instagram.com/cru_nchies?igsh=eGwwYTgybGtyZ2E="
         }
       ]
     },
@@ -84,24 +80,24 @@
       "zazzle": "",
       "cafepress": "",
       "printful": "",
-      "gumroad": "https://dodolko.gumroad.com",
+      "gumroad": "",
       "sellfy": "",
       "customShop": []
     },
     "media": {
-      "profileImage": "/media/img/profilePicture.png",
-      "coverImage": "/media/img/MobileBackground.png",
-      "avatar": "/media/img/profilePicture.png",
+      "profileImage": "/media/img/Crunchies.png",
+      "coverImage": "/media/img/macaronBackground.jpg",
+      "avatar": "/media/img/Crunchies.png",
       "logo": "",
-      "banner": "/media/img/DesktopBackground.png",
+      "banner": "/media/img/macaronBackground.jpg",
       "gallery": []
     },
     "preferences": {
       "theme": "",
-      "language": "",
-      "currency": "",
+      "language": "fr",
+      "currency": "EUR",
       "colorScheme": "",
-      "displayLinks": ["gumroad", "koFi", "Home", "About Us", "Services"]
+      "displayLinks": ["Site Web", "Instagram"]
     },
     "custom": {
       "customFields": []

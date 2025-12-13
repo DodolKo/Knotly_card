@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=BBH+Sans+Hegarty&family=Short+Stack&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sniglet&display=swap');
 @import "tailwindcss";
 @import "./style/theme.css";
 
@@ -65,13 +65,11 @@ body::-webkit-scrollbar,
 	}
 
 	.background-mobile {
-		@apply absolute inset-0 bg-cover bg-center bg-no-repeat md:hidden;
-		background-image: url('/media/img/MobileBackground.png');
+		@apply absolute inset-0 md:hidden;
 	}
 
 	.background-desktop {
-		@apply absolute inset-0 bg-cover bg-center bg-no-repeat hidden md:block;
-		background-image: url('/media/img/DesktopBackground.png');
+		@apply absolute inset-0 hidden md:block;
 	}
 
 	.effect-layer-container {

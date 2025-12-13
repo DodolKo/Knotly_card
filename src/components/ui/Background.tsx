@@ -2,9 +2,10 @@ export interface BackgroundProps {
 	blur?: number;
 	frost?: boolean;
 	scale?: number; // Scale percentage (100 = default, >100 = overscale)
+	backgroundColor?: string; // Background color when no image is used
 }
 
-export function Background({ blur = 0, frost = false, scale = 100 }: BackgroundProps) {
+export function Background({ blur = 0, frost = false, scale = 100, backgroundColor }: BackgroundProps) {
 	const blurStyle = blur > 0 ? { filter: `blur(${blur}px)` } : {};
 	const frostStyle = frost
 		? {
@@ -20,15 +21,17 @@ export function Background({ blur = 0, frost = false, scale = 100 }: BackgroundP
 		transformOrigin: "center center",
 	} : {};
 
+	const backgroundColorStyle = backgroundColor ? { backgroundColor } : {};
+
 	return (
 		<div className="background-container">
 			<div
 				className="background-mobile"
-				style={{ ...blurStyle, ...frostStyle, ...scaleStyle }}
+				style={{ ...blurStyle, ...frostStyle, ...scaleStyle, ...backgroundColorStyle }}
 			/>
 			<div
 				className="background-desktop"
-				style={{ ...blurStyle, ...frostStyle, ...scaleStyle }}
+				style={{ ...blurStyle, ...frostStyle, ...scaleStyle, ...backgroundColorStyle }}
 			/>
 		</div>
 	);

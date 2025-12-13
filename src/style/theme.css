@@ -1,17 +1,17 @@
 :root {
-	--k-color-primary: #36748E;
-	--k-color-secondary: #8BD2D3;
-	--k-color-accent: #F1EBA8;
+	--k-color-primary: #8B6F5E;
+	--k-color-secondary: #F5C2C7;
+	--k-color-accent: #B8E6B8;
 
-	--k-text-main-light: #8BD2D3;
-	--k-text-muted-light: var(--k-color-primary);
-	--k-text-main-dark: #F1EBA8;
-	--k-text-muted-dark: var(--k-color-secondary);
+	--k-text-main-light: #8B6F5E;
+	--k-text-muted-light: #A68B7A;
+	--k-text-main-dark: #F5C2C7;
+	--k-text-muted-dark: #E8A5AB;
 
-	--k-surface-card-light: #F1EBA8;
-	--k-surface-card-dark: #36748E;
-	--k-surface-card-hover-light: #FEFCCF;
-	--k-surface-card-hover-dark: #418BA5;
+	--k-surface-card-light: #F5C2C7;
+	--k-surface-card-dark: #8B6F5E;
+	--k-surface-card-hover-light: #F8D4D8;
+	--k-surface-card-hover-dark: #A68B7A;
 	--k-surface-badge-light: var(--k-color-primary);
 	--k-surface-badge-dark: var(--k-color-accent);
 
@@ -29,8 +29,8 @@
 }
 
 @theme {
-	--font-family-sans: 'BBH Sans Hegarty', sans-serif;
-	--font-family-display: 'Short Stack', cursive;
+	--font-family-sans: 'Sniglet', cursive;
+	--font-family-display: 'Sniglet', cursive;
 
 	--color-primary: var(--k-color-primary);
 	--color-secondary: var(--k-color-secondary);
