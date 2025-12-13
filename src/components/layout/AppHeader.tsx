@@ -6,9 +6,11 @@ import { DarkModeToggle } from "../ui/DarkModeToggle";
 
 export interface AppHeaderProps {
 	textBorder?: boolean;
+	titleColor?: string;
+	bioColor?: string;
 }
 
-export function AppHeader({ textBorder = false }: AppHeaderProps = {}) {
+export function AppHeader({ textBorder = false, titleColor = "#8B6F5E", bioColor = "#F5C2C7" }: AppHeaderProps = {}) {
 	const [headerView, setHeaderView] = useState<UserHeaderView | null>(null);
 
 	useEffect(() => {
@@ -40,8 +42,20 @@ export function AppHeader({ textBorder = false }: AppHeaderProps = {}) {
 						border={false}
 					/>
 				)}
-				<h1 className={`profile-name text-h1 text-color-primary ${textBorder ? 'profile-name-bordered' : ''}`}>{headerView.displayName}</h1>
-				{headerView.bio && <p className={`profile-bio ${textBorder ? 'profile-bio-bordered' : ''}`}>{headerView.bio}</p>}
+				<h1 
+					className={`profile-name text-h1 ${textBorder ? 'profile-name-bordered' : ''}`}
+					style={{ color: titleColor }}
+				>
+					{headerView.displayName}
+				</h1>
+				{headerView.bio && (
+					<p 
+						className={`profile-bio ${textBorder ? 'profile-bio-bordered' : ''}`}
+						style={{ color: bioColor }}
+					>
+						{headerView.bio}
+					</p>
+				)}
 			</div>
 		</header>
 	);

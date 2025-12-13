@@ -1,46 +1,53 @@
 :root {
+	/* Brown theme - primary colors */
 	--k-color-primary: #8B6F5E;
-	--k-color-secondary: #F5C2C7;
-	--k-color-accent: #B8E6B8;
-
-	--k-text-main-light: #8B6F5E;
-	--k-text-muted-light: #A68B7A;
-	--k-text-main-dark: #F5C2C7;
-	--k-text-muted-dark: #E8A5AB;
-
-	--k-surface-card-light: #F5C2C7;
-	--k-surface-card-dark: #8B6F5E;
-	--k-surface-card-hover-light: #F8D4D8;
-	--k-surface-card-hover-dark: #A68B7A;
-	--k-surface-badge-light: var(--k-color-primary);
+	--k-color-secondary: #A68B7A;
+	--k-color-accent: #4A9B9B;
+	
+	/* Text colors - black for light mode */
+	--text-color-primary: #000000;
+	--text-color-muted: #333333;
+	
+	/* Surface colors - light mode */
+	--k-surface-card-light: #FFFFFF;
+	--k-surface-card-hover-light: #F5F5F5;
+	--k-surface-card-dark: #3A2E26;
+	--k-surface-card-hover-dark: #4A3D35;
+	
+	/* Border colors */
+	--k-border-light: #E0E0E0;
+	--k-border-dark: #5A4D45;
+	
+	/* Badge colors */
+	--k-surface-badge-light: var(--k-color-accent);
 	--k-surface-badge-dark: var(--k-color-accent);
-
-	--k-border-light: var(--k-color-primary);
-	--k-border-dark: var(--k-color-accent);
-	--k-overlay-background: var(--k-color-primary);
-
-	--text-color-primary: var(--k-text-main-light);
-	--text-color-muted: var(--k-text-muted-light);
 }
 
 .dark {
-	--text-color-primary: var(--k-text-main-dark);
-	--text-color-muted: var(--k-text-muted-dark);
+	/* Text colors - black for dark mode */
+	--text-color-primary: #000000;
+	--text-color-muted: #333333;
+	
+	/* Surface colors - dark mode: keep cards light so black text is readable */
+	--k-surface-card-light: #FFFFFF;
+	--k-surface-card-hover-light: #F5F5F5;
+	--k-surface-card-dark: #FFFFFF;
+	--k-surface-card-hover-dark: #F5F5F5;
 }
 
 @theme {
 	--font-family-sans: 'Sniglet', cursive;
 	--font-family-display: 'Sniglet', cursive;
-
+	
 	--color-primary: var(--k-color-primary);
 	--color-secondary: var(--k-color-secondary);
 	--color-accent: var(--k-color-accent);
-
-	--color-primary-contrast: var(--k-color-secondary);
-	--color-secondary-contrast: var(--k-color-accent);
-	--color-icon-contrast: var(--k-color-primary);
+	
+	--color-primary-contrast: #000000;
+	--color-secondary-contrast: #000000;
+	--color-icon-contrast: #000000;
 }
 
 .dark {
-	--color-icon-contrast: var(--k-color-accent);
+	--color-icon-contrast: #000000;
 }

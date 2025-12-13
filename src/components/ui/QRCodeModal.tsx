@@ -44,8 +44,8 @@ export function QRCodeModal({ url, name, isOpen, onClose }: QRCodeModalProps) {
 					</button>
 				</div>
 				<div className="qr-modal-body">
-					<div className="qr-code-container" style={{ backgroundColor: '#ffffff', border: '2px solid #6b7280' }}>
-						<QRCodeSVG value={url} size={256} level="H" />
+					<div className="qr-code-container">
+						<QRCodeSVG value={url} size={256} level="H" fgColor="#000000" bgColor="#FFFFFF" />
 					</div>
 					<p className="qr-modal-helper">Scan this QR code to open the link.</p>
 				</div>

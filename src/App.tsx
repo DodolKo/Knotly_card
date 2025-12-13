@@ -33,13 +33,24 @@ function App() {
 
 				<LayoutRender>
 					<ParallaxLayer layer={1} tilt={35}>
-						<AppHeader />
+						<AppHeader 
+							titleColor="#000000"
+							bioColor="#F5C2C7"
+						/>
 					</ParallaxLayer>
 
 					<ParallaxLayer layer={2} tilt={35}>
 						<AppContent>
-							<LinkCard name="Site Web" />
-							<LinkCard name="Instagram" />
+							<LinkCard 
+								name="Site Web" 
+								backgroundColor="#D4A797"
+								textColor="#000000"
+							/>
+							<LinkCard 
+								name="Instagram" 
+								backgroundColor="#D4A797"
+								textColor="#000000"
+							/>
 						</AppContent>
 					</ParallaxLayer>
 

@@ -29,8 +29,8 @@ export interface LinkCardProps {
 export function LinkCard({
 	mode = "auto",
 	name,
-	backgroundColor,
-	textColor,
+	backgroundColor = "#D4A797",
+	textColor = "#000000",
 	url,
 	asThumbnail = false,
 	asIcon = false,
@@ -103,7 +103,7 @@ export function LinkCard({
 			<a
 				href={linkData.url}
 				className="link-card"
-				style={backgroundColor ? { backgroundColor } : undefined}
+				style={{ backgroundColor }}
 			>
 				{asThumbnail && thumbnailSrc && thumbnailFormat !== "none" && (
 					<div className={`link-card-thumbnail-wrapper ${thumbnailClass}`}>
@@ -120,8 +120,8 @@ export function LinkCard({
 							<img src={iconSrc} alt={`${linkData.name} icon`} className="link-card-icon" />
 						)}
 						<span
-							className={`link-card-text ${textAlignClass} text-h4 text-color-primary`}
-							style={textColor ? { color: textColor } : undefined}
+							className={`link-card-text ${textAlignClass} text-h4`}
+							style={{ color: textColor }}
 						>
 							{linkData.name}
 						</span>
